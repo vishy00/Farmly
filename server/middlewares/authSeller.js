@@ -1,24 +1,32 @@
 import jwt from 'jsonwebtoken';
 
-const authSeller = async (req, res, next) => {
-    const { sellerToken } = req.cookies;
+const authSeller = (req, res, next) => {
+    const sellerToken = req.cookies?.sellerToken;
 
-    if(!sellerToken){
-        return res.json({ success: false, message: 'Not Authorized' })
+    if (!sellerToken) {
+        return res.status(401).json({
+            success: false,
+            message: "Not Authorized: No token"
+        });
     }
 
     try {
-        const tokenDecode = jwt.verify(sellerToken, process.env.JWT_SECRET)
-        if(tokenDecode.email === process.env.SELLER_EMAIL){
-            next();
-        }else{
-            return res.json({ success: false, message: 'Not Authorized' })
+        const decoded = jwt.verify(sellerToken, process.env.JWT_SECRET);
+
+        if (decoded.email !== process.env.SELLER_EMAIL) {
+            return res.status(401).json({
+                success: false,
+                message: "Not Authorized: Invalid seller"
+            });
         }
 
+        next();
     } catch (error) {
-        return res.json({ success: false, message: error.message })
+        return res.status(401).json({
+            success: false,
+            message: "Not Authorized: Token expired or invalid"
+        });
     }
-    
-}
+};
 
-export default authSeller;  
+export default authSeller;

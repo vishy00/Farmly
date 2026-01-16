@@ -22,6 +22,8 @@ await connectCloudinary();
 //Allow multiple origins
 const allowedOrigins = ['http://localhost:5173', 'https://farmly-frontend.vercel.app']  
 
+app.use(cookieParser());
+
 //Middleware configuration
 app.use(cors({
   origin: (origin, callback) => {
@@ -38,7 +40,6 @@ app.use(cors({
 app.post('/stripe', express.raw({type: 'application/json'}), stripeWebhooks)
 
 app.use(express.json());
-app.use(cookieParser());
 
 
 

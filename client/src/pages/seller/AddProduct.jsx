@@ -13,39 +13,37 @@ const AddProduct = () => {
     const [offerPrice,setOfferPrice] = useState('');
     const {axios} = useAppContext();
 
-    const onSubmitHandler= async (event) => {
-        try {
-            event.preventDefault();
-            const productData = {
-                name,
-                description: description.split('\n'),
-                category,
-                price,
-                offerPrice
-            }
+const onSubmitHandler = async (event) => {
+    try {
+        event.preventDefault();
+        
+        const formData = new FormData();
+        // Backend me isse JSON.parse(req.body.productData) karke nikalna hoga
+        formData.append('productData', JSON.stringify({
+            name,
+            description: description.split('\n'),
+            category,
+            price,
+            offerPrice
+        }));
 
-            const formData = new FormData();
-            formData.append('productData', JSON.stringify(productData) );
-            for(let i=0; i<files.length; i++){
-                formData.append('images', files[i]);
-            }
-            const {data} = await axios.post('/api/product/add', formData);
-            if(data.success){
-                toast.success(data.message);
-                setName('');
-                setDescription('');
-                setCategory('');
-                setPrice('');
-                setOfferPrice('');
-                setFiles([]);
-            }else{
-                toast.error(data.message);
-            }
+        files.forEach((file) => {
+            if (file) formData.append('images', file);
+        });
 
-        } catch (error) {
-            toast.error(error.message);
+        // withCredentials default me true hai hi AppContext me
+        const { data } = await axios.post('/api/product/add', formData);
+        
+        if(data.success){
+            toast.success(data.message);
+            // Reset fields...
+        } else {
+            toast.error(data.message);
         }
+    } catch (error) {
+        toast.error(error.response?.data?.message || error.message);
     }
+}
 
     return (
         <div className="no-scrollbar flex-1 h-[95vh] overflow-y-scroll flex flex-col justify-between" >

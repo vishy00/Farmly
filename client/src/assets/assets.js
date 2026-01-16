@@ -1,6 +1,4 @@
 import logo from "./logo.svg";
-import logo1 from "./logo1.png"
-import logo11 from "./logo11.png"
 import search_icon from "./search_icon.svg";
 import remove_icon from "./remove_icon.svg";
 import arrow_right_icon_colored from "./arrow_right_icon_colored.svg";
@@ -23,7 +21,7 @@ import trust_icon from "./trust_icon.svg";
 import black_arrow_icon from "./black_arrow_icon.svg";
 import white_arrow_icon from "./white_arrow_icon.svg";
 import main_banner_bg from "./main_banner_bg.png";
-import main_banner_bg_sm from "./main_banner_bg_sm.jpg";
+import main_banner_bg_sm from "./main_banner_bg_sm.png";
 import bottom_banner_image from "./bottom_banner_image.png";
 import bottom_banner_image_sm from "./bottom_banner_image_sm.png";
 import add_address_iamge from "./add_address_image.svg";
@@ -72,27 +70,8 @@ import quinoa_image from "./quinoa_image.png";
 import brown_rice_image from "./brown_rice_image.png";
 import barley_image from "./barley_image.png";
 
-
-import cold_drinks from './cold_drinks.png';
-import cookies from './cookies.png';
-import dairy_bread_eggs from './dairy_bread_eggs.png';
-import fruits from './fruits.png';
-import frozen from './frozen.png';
-import veggies from './veggies.png';
-import packaged_food from './packaged_food.png';
-import tea_coffee from './tea_coffee.png';
-import ice_cream from './ice_cream.png';
-import meat_fish from './meat_fish.png';
-import namkeen_chips from './namkeen_chips.png';
-import breakfast_sauces from './breakfast_sauces.png';
-import sweets from './sweets.png';
-import wheat_rice from './wheat_rice.png';
-
-
 export const assets = {
   logo,
-  logo1, 
-  logo11,
   search_icon,
   remove_icon,
   arrow_right_icon_colored,
@@ -122,95 +101,47 @@ export const assets = {
 };
 
 export const categories = [
-   {
-    text: "Fresh Fruits",
-    path: "Fruits",
-    image: fruits,
-    bgColor: "#FEE0E0",
-  },
   {
-    text: "Veggies",
+    text: "Organic veggies",
     path: "Vegetables",
-    image: veggies,
+    image: organic_vegitable_image,
     bgColor: "#FEF6DA",
   },
   {
-    text: "Dairy, Bread & Eggs",
-    path: "Dairy, Bread & Eggs",
-    image: dairy_bread_eggs,
+    text: "Fresh Fruits",
+    path: "Fruits",
+    image: fresh_fruits_image,
     bgColor: "#FEE0E0",
   },
   {
-    text: "Cold Drinks & Juices",
+    text: "Cold Drinks",
     path: "Drinks",
-    image: cold_drinks,
+    image: bottles_image,
     bgColor: "#F0F5DE",
   },
   {
-    text: "Biscuits & Cookies",
-    path: "Buiscuits & Cookies",
-    image: cookies,
+    text: "Instant Food",
+    path: "Instant",
+    image: maggi_image,
     bgColor: "#E1F5EC",
   },
   {
-    text: "Grains",
+    text: "Dairy Products",
+    path: "Dairy",
+    image: dairy_product_image,
+    bgColor: "#FEE6CD",
+  },
+  {
+    text: "Bakery & Breads",
+    path: "Bakery",
+    image: bakery_image,
+    bgColor: "#E0F6FE",
+  },
+  {
+    text: "Grains & Cereals",
     path: "Grains",
-    image: wheat_rice,
+    image: grain_image,
     bgColor: "#F1E3F9",
-  },
-  {
-    text: "Dairy, Bread & Eggs",
-    path: "Dairy, Bread & Eggs",
-    image: dairy_bread_eggs,
-    bgColor: "#FEE6CD",
-  },
-  {
-    text: "Packaged Foods",
-    path: "Packaged Foods",
-    image: packaged_food,
-    bgColor: "#E0F6FE",
-  },
-  {
-    text: "Frozen Foods",
-    path: "Frozen Foods",
-    image: frozen,
-    bgColor: "#F1E3F9",
-  },
-    {
-    text: "Tea & Coffee",
-    path: "Tea & Coffee",
-    image: tea_coffee,
-    bgColor: "#E1F5EC",
-  },
-  {
-    text: "Ice Creams & more",
-    path: "IceCreams",
-    image: ice_cream,
-    bgColor: "#FEE6CD",
-  },
-  {
-    text: "Meat, Fish & more",
-    path: "Meat, Fish & more",
-    image: meat_fish,
-    bgColor: "#E0F6FE",
-  },
-  {
-    text: "Namkeen, Chips & Snacks",
-    path: "Namkeen, Chips & Snacks",
-    image: namkeen_chips,
-    bgColor: "#F1E3F9",
-  },
-    {
-    text: "Breakfast & Sauces",
-    path: "Breakfast & Sauces",
-    image: breakfast_sauces,
-    bgColor: "#FEE6CD",
-  },
-  {
-    text: "Sweets & Choclates",
-    path: "Sweets & Choclates",
-    image: sweets,
-    bgColor: "#E0F6FE",
   },
 ];
 

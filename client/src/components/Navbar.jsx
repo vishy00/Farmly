@@ -85,7 +85,7 @@ const Navbar = () => {
                         </button>
                     ) : (
                         <div className='relative group hidden md:block'>
-                            <CircleUserRound className='w-9 text-primary cursor-pointer' />
+                            <CircleUserRound className='w-12 text-primary cursor-pointer' />
                             <ul className="hidden group-hover:block absolute top-full right-0 bg-white shadow-xl border border-gray-100 py-2 w-48 rounded-lg mt-1 transition-all">
                                 <li onClick={() => navigate("my-orders")} className='px-4 py-2 hover:bg-gray-50 cursor-pointer'>My Orders</li>
                                 <li onClick={logout} className='px-4 py-2 hover:bg-gray-50 cursor-pointer text-red-500'>Logout</li>

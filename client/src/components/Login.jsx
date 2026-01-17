@@ -32,7 +32,7 @@ const Login = () => {
 
     return (
         <div onClick={()=> setShowUserLogin(false)} className='fixed top-0 bottom-0 left-0 right-0 z-50 flex items-center
-        text-sm bg-black/40 backdrop-blur-sm'>
+        text-sm bg-black/15 backdrop-blur-sm'>
 
             <form 
                 onSubmit={onSubmitHandler} 

@@ -32,7 +32,7 @@ const Login = () => {
 
     return (
         <div onClick={()=> setShowUserLogin(false)} className='fixed top-0 bottom-0 left-0 right-0 z-50 flex items-center
-        text-sm bg-black/15 backdrop-blur-sm'>
+        text-sm bg-black/35 backdrop-blur-sm'>
 
             <form 
                 onSubmit={onSubmitHandler} 
@@ -57,12 +57,12 @@ const Login = () => {
                 
                 <div className="w-full">
                     <p className='text-gray-200 ml-1'>Email</p>
-                    <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder="email@example.com" className="bg-white/20 border border-white/20 rounded-lg w-full p-2.5 mt-1 outline-none focus:border-primary text-white placeholder:text-gray-400" type="email" required />
+                    <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder="email" className="bg-white/20 border border-white/20 rounded-lg w-full p-2.5 mt-1 outline-none focus:border-primary text-white placeholder:text-white" type="email" required />
                 </div>
 
                 <div className="w-full">
                     <p className='text-gray-200 ml-1'>Password</p>
-                    <input onChange={(e) => setPassword(e.target.value)} value={password} placeholder="••••••••" className="bg-white/20 border border-white/20 rounded-lg w-full p-2.5 mt-1 outline-none focus:border-primary text-white placeholder:text-gray-400" type="password" required />
+                    <input onChange={(e) => setPassword(e.target.value)} value={password} placeholder="password" className="bg-white/20 border border-white/20 rounded-lg w-full p-2.5 mt-1 outline-none focus:border-primary text-white placeholder:text-white" type="password" required />
                 </div>
 
                 {state === "register" ? (

@@ -84,12 +84,17 @@ const Navbar = () => {
                             Login
                         </button>
                     ) : (
-                        <div className='relative group hidden md:block'>
-                            <CircleUserRound className='w-12 text-primary cursor-pointer' />
-                            <ul className="hidden group-hover:block absolute top-full right-0 bg-white shadow-xl border border-gray-100 py-2 w-48 rounded-lg mt-1 transition-all">
-                                <li onClick={() => navigate("my-orders")} className='px-4 py-2 hover:bg-gray-50 cursor-pointer'>My Orders</li>
-                                <li onClick={logout} className='px-4 py-2 hover:bg-gray-50 cursor-pointer text-red-500'>Logout</li>
-                            </ul>
+                        /* Added 'py-2' to the container and adjusted mt-0 to bridge the gap */
+                        <div className='relative group hidden md:block py-2'> 
+                            <CircleUserRound className='w-10 text-primary cursor-pointer' />
+                            
+                            {/* Dropdown Menu */}
+                            <div className="hidden group-hover:block absolute top-full right-0 pt-2 w-48 transition-all">
+                                <ul className="bg-white shadow-xl border border-gray-100 py-2 rounded-lg">
+                                    <li onClick={() => navigate("my-orders")} className='px-4 py-2 hover:bg-gray-50 cursor-pointer'>My Orders</li>
+                                    <li onClick={logout} className='px-4 py-2 hover:bg-gray-50 cursor-pointer text-red-500'>Logout</li>
+                                </ul>
+                            </div>
                         </div>
                     )}
 

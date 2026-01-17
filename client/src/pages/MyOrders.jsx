@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useAppContext } from '../context/AppContext'
-import { dummyOrders } from '../assets/assets'
 
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([])
@@ -44,11 +43,17 @@ const MyOrders = () => {
                     py-5 md:gap-16 w-full max-w-4xl`}>
                         <div className='flex items-center mb-4 md:mb-0'>
                             <div className='bg-primary/10 p-4 rounded-lg'>
-                                <img src={item.product.image[0]} alt='' className='w-16 h-16' />
+                                <img
+                                  src={item?.product?.image?.[0] || "/placeholder.png"}
+                                  alt={item?.product?.name || "product"}
+                                  className="w-16 h-16"
+                                />
                             </div>
                             <div className='ml-4'>
-                                <h2 className='text-xl font-medium text-gray-800'>{item.product.name}</h2>
-                                <p>Category: {item.product.category}</p>
+                                <h2 className='text-xl font-medium text-gray-800'>
+                                  {item?.product?.name || "Product removed"}
+                                </h2>
+                                <p>Category: {item?.product?.category || "N/A"}</p>
                             </div>
                         </div>
                         <div className='flex flex-col justify-center md:ml-8 mb-4 md:mb-0 '>
@@ -57,7 +62,7 @@ const MyOrders = () => {
                             <p>Date: {new Date(order.createdAt).toLocaleDateString()}</p>
                         </div>
                         <p className='text-primary text-lg font-medium'>
-                            Amount: {currency} {item.product.offerPrice * item.quantity }
+                            Amount: {currency} {(item?.product?.offerPrice || 0) * (item?.quantity || 1)}
                         </p>
                     </div>
                 ))}

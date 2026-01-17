@@ -18,6 +18,7 @@ const Loading = () => {
     },[nextUrl])
 
  return (
+    <div className="min-h-screen w-full flex items-center justify-center">
     <StyledWrapper>
       <div className="loadingspinner">
         <div id="square1" />
@@ -27,10 +28,16 @@ const Loading = () => {
         <div id="square5" />
       </div>
     </StyledWrapper>
+    </div>
   );
 }
 
 const StyledWrapper = styled.div`
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .loadingspinner {
     --square: 26px;
     --offset: 30px;
@@ -43,10 +50,6 @@ const StyledWrapper = styled.div`
     width: calc( 3 * var(--offset) + var(--square));
     height: calc( 2 * var(--offset) + var(--square));
     padding: 0px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 30px;
     position: relative;
   }
 

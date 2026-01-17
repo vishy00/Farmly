@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
 import { assets, dummyAddress } from "../assets/assets";
 import toast from "react-hot-toast";
+import {MoveLeft} from "lucide-react";
 
 const Cart = () => {
 
@@ -138,8 +139,11 @@ const Cart = () => {
 
                 <button onClick={()=>{navigate("/products"); scrollTo(0,0)}}
                 className="group cursor-pointer flex items-center mt-8 gap-2 text-primary font-medium">
-                    <img className="group-hover:-translate-x-1 transition" 
-                    src={assets.arrow_right_icon_colored} alt="arrow" />
+                    <MoveLeft
+                        size={20}
+                        color="#F97316"
+                        className="hover:text-orange-600 transition"
+                    />
                     Continue Shopping
                 </button>
 

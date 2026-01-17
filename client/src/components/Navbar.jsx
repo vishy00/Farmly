@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { assets } from '../assets/assets'
 import { useAppContext } from '../context/AppContext'
 import toast from 'react-hot-toast'
-import { ShoppingCart } from 'lucide-react'
+import { ShoppingCart, CircleUserRound } from 'lucide-react'
 
 const Navbar = () => {
     const [open, setOpen] = React.useState(false)
@@ -88,7 +88,7 @@ const Navbar = () => {
                     </button>)
                     : (
                         <div className='relative group'>
-                            <img src={assets.profile_icon} className='w-10' />
+                            <CircleUserRound color="#F97316" size={10}/>
                             <ul className="hidden group-hover:block absolute top-10 right-0 bg-white shadow-md 
                             border border-gray-200 py-2.5 w-40 rounded-md text-sm z-40">
                                 <li onClick={() => navigate("my-orders")} className='p-1.5 pl-3 hover:bg-primary/10 cursor-pointer'>My Orders</li>
